@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | NYASAR PARAH!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&family=Space+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #020617;
+            --text-primary: #f8fafc;
+            --accent-color: #38bdf8;
+            --glitch-red: #ff00c1;
+            --glitch-blue: #00fff9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Latar Belakang Partikel Sederhana */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background-image: radial-gradient(circle, #1e293b 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.3;
+            animation: moveBg 20s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes moveBg {
+            from { transform: translate(0, 0); }
+            to { transform: translate(-5%, -5%); }
+        }
+
+        .error-container {
+            position: relative;
+            z-index: 10;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Efek Glitch 404 */
+        .error-code {
+            font-size: clamp(8rem, 20vw, 12rem);
+            font-weight: 900;
+            position: relative;
+            display: inline-block;
+            color: var(--text-primary);
+            text-shadow: 0.05em 0 0 var(--glitch-red), -0.05em -0.025em 0 var(--glitch-blue);
+            animation: glitch 1s infinite;
+        }
+
+        .error-code span {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        @keyframes glitch {
+            0% { text-shadow: 0.05em 0 0 var(--glitch-red), -0.05em -0.025em 0 var(--glitch-blue); }
+            14% { text-shadow: 0.05em 0 0 var(--glitch-red), -0.05em -0.025em 0 var(--glitch-blue); }
+            15% { text-shadow: -0.05em -0.025em 0 var(--glitch-red), 0.025em 0.035em 0 var(--glitch-blue); }
+            49% { text-shadow: -0.05em -0.025em 0 var(--glitch-red), 0.025em 0.035em 0 var(--glitch-blue); }
+            50% { text-shadow: 0.035em 0.05em 0 var(--glitch-red), 0.05em 0 0 var(--glitch-blue); }
+            99% { text-shadow: 0.035em 0.05em 0 var(--glitch-red), 0.05em 0 0 var(--glitch-blue); }
+            100% { text-shadow: -0.025em 0 0 var(--glitch-red), -0.025em -0.025em 0 var(--glitch-blue); }
+        }
+
+        h2 {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .desc {
+            color: #94a3b8;
+            margin-bottom: 40px;
+            max-width: 500px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Tombol Rame */
+        .btn-home {
+            position: relative;
+            display: inline-block;
+            padding: 15px 40px;
+            background: transparent;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 900;
+            border: 2px solid var(--accent-color);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            letter-spacing: 2px;
+        }
+
+        .btn-home:hover {
+            background: var(--accent-color);
+            color: var(--bg-color);
+            box-shadow: 0 0 50px var(--accent-color);
+            transform: scale(1.1) rotate(-2deg);
+        }
+
+        /* Elemen melayang tambahan */
+        .decoration {
+            position: absolute;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--glitch-blue);
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="decoration" style="top: 10%; left: 10%;">SYSTEM_FAILURE_404</div>
+    <div class="decoration" style="bottom: 20%; right: 15%;">ACCESS_DENIED</div>
+    <div class="decoration" style="top: 50%; left: 5%;">REBOOTING...</div>
+    <div class="decoration" style="bottom: 10%; left: 20%;">USER_LOST_IN_SPACE</div>
+
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <h2>SIGNAL LOST</h2>
+        
+        <a href="Ahsan Web.html" class="btn-home">BACK HOME</a>
+    </div>
+
+    <script>
+        // Efek tambahan: Bikin teks dekorasi gerak-gerak random
+        const decos = document.querySelectorAll('.decoration');
+        setInterval(() => {
+            decos.forEach(deco => {
+                deco.style.opacity = Math.random() * 0.5;
+            });
+        }, 100);
+    </script>
+</body>
+</html>

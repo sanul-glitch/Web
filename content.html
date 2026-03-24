@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIDEO CONTENT</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #0f172a;
+            color: #f6f3f3;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+        }
+
+        /* Layout Grid Video */
+        .video-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .video-item {
+            margin-bottom: 20px;
+        }
+
+        /* Kotak Video Responsif */
+        .video-player {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #000;
+            border-radius: 4px;
+        }
+
+        .video-title {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+
+        .video-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.8rem;
+            color: #999;
+            text-align: center;
+        }
+
+        .btn-back {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: var(--card); /* Mengikuti warna card kamu */
+        color: white;
+        padding: 10px 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        border: 1px solid rgba(255,255,255,0.1);
+        transition: 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        z-index: 1000;
+        cursor: pointer;
+        }
+
+        .btn-back:hover {
+        background-color: var(--primary); /* Warna biru saat di-hover */
+        transform: translateX(-5px);
+        }
+        
+        .btn-biasa {
+        display: inline-block;
+        padding: 10px 24px;
+        background-color: var(--card); /* Warna biru gelap kartu */
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        margin-top: 20px;
+        }
+
+    /* Efek saat kursor di atas tombol */
+    .btn-biasa:hover {
+        background-color: var(--primary); /* Berubah jadi biru terang */
+        border-color: var(--primary);
+        transform: translateY(-2px); /* Sedikit naik ke atas */
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Koleksi Video</h1>
+        <p>Daftar dokumentasi video proyek.</p>
+    </header>
+
+    <div class="video-list">
+        
+        <div class="video-item">
+            <iframe class="video-player" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
+            <span class="video-title">Judul Video Satu</span>
+            <p class="video-desc">Penjelasan singkat mengenai isi video ini.</p>
+        </div>
+
+        <div class="video-item">
+            <iframe class="video-player" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+            <span class="video-title">Judul Video Dua</span>
+            <p class="video-desc">Penjelasan singkat mengenai isi video ini.</p>
+        </div>
+
+        <div class="video-item">
+            <video class="video-player" controls>
+                <source src="video-kamu.mp4" type="video/mp4">
+                Browser tidak mendukung video.
+            </video>
+            <span class="video-title">Video Dari File Lokal</span>
+            <p class="video-desc">Ini contoh jika kamu memutar file .mp4 langsung.</p>
+        </div>
+                
+        <div>
+            <h3>SELENGKAPNYA</h3>
+            <a href="Ahsan Web.html" class="btn-back">BACK</a>
+            <a href="https://www.youtube.com/@Erblicth" class="btn-biasa"> MY YOUTUBE CHANNEL :) </a>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 Ahsan Video Web
+    </footer>
+</div>
+
+</body>
+</html>
